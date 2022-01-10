@@ -28,3 +28,7 @@ with st.spinner("Discovering Answers.."):
 
         text = test_morph_qa.morph(q_dict, context)
         st.write(text[0])
+        
+        answersEdited = qa(question=text[0], context=sentence)
+        st.write(answersEdited['answer'])
+        
