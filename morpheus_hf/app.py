@@ -1,10 +1,12 @@
 import streamlit as st
-from transformers import pipeline
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 from morpheus import MorpheusHuggingfaceNLI, MorpheusHuggingfaceQA, MorpheusHuggingfaceSummarization
+
+model_name = "deepset/roberta-base-squad2"
 
 @st.cache(allow_output_mutation=True)
 def load_qa_model():
-    model = pipeline("question-answering")
+    model = pipeline('question-answering', model=model_name, tokenizer=model_name)
     return model
 
 qa = load_qa_model()
