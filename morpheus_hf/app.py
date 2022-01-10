@@ -27,3 +27,5 @@ with st.spinner("Discovering Answers.."):
         q_dict = {"question": "In what country is Normandy located?", "id": "56ddde6b9a695914005b9628", "answers": [{"text": "France", "answer_start": 159}, {"text": "France", "answer_start": 159}, {"text": "France", "answer_start": 159}, {"text": "France", "answer_start": 159}], "is_impossible": False}
 
         print(test_morph_qa.morph(q_dict, context))
+        
+        st.write(test_morph_qa.morph(q_dict, context)['context'])
